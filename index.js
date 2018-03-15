@@ -4,34 +4,36 @@ const app = express();
 const router = express.Router();
 const port = process.env.PORT || 8080;
 
-// url: http://localhost:3000/
-app.get('/', (request, response) => response.send('Hello World'));
+app.get('/', (request, response) =>
+  response.send('Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva')
+);
 
 // all routes prefixed with /api
 app.use('/api', router);
 
-// using router.get() to prefix our path
-// url: http://localhost:3000/api/
 router.get('/', (request, response) => {
-  response.json({ message: 'Hello, welcome to my server' });
+  response.json({
+    message: 'Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
+    hacking: 'no',
+    param: null
+  });
 });
 
-router.get('/stuff', (request, response) => {
+router.get('/hack', (request, response) => {
   var urlParts = url.parse(request.url, true);
   var parameters = urlParts.query;
   var myParam = parameters.myParam;
-  // e.g. myVenues = 12;
 
-  var myResponse = `I multiplied the number you gave me (${myParam}) by 5 and got: ${myParam * 5}`;
-
-  response.json({ message: myResponse });
+  response.json({
+    message: 'Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
+    hacking: 'yes',
+    param: myParam
+  });
 });
 
-// set the server to listen on port 3000
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
 // this array is used for identification of allowed origins in CORS
-const originWhitelist = ['http://localhost:3000', 'https://example.net'];
+const originWhitelist = [];
+// const originWhitelist = ['http://localhost:3000', 'https://example.net'];
 
 // middleware route that all requests pass through
 router.use((request, response, next) => {
@@ -40,7 +42,7 @@ router.use((request, response, next) => {
   let origin = request.headers.origin;
 
   // only allow requests from origins that we trust
-  if (originWhitelist.indexOf(origin) > -1) {
+  if (originWhitelist.length === 0 || originWhitelist.indexOf(origin) > -1) {
     response.setHeader('Access-Control-Allow-Origin', origin);
   }
 
@@ -52,3 +54,6 @@ router.use((request, response, next) => {
   // push through to the proper route
   next();
 });
+
+// set the server to listen on port 3000
+app.listen(port, () => console.log(`Listening on port ${port}`));
