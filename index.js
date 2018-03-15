@@ -21,7 +21,7 @@ router.get('/hack', (request, response) => {
   var parameters = urlParts.query;
   var myParam = parameters.myParam;
 
-  var myResponse = `I multiplied the number you gave me (${myParam}) by 5 and got: ${myParam * 5}`;
+  var myResponse = `Endpoint de hacking: Você passou o parâmetro (${myParam}) !`;
 
   response.json({ message: myResponse });
 });
