@@ -29,7 +29,7 @@ router.get('/hack', (request, response) => {
   response.json({
     message: 'Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
     hacking: 'yes',
-    param: myParam
+    param: myParam || null
   });
 });
 
