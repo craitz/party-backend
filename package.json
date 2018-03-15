@@ -1,0 +1,25 @@
+{
+  "name": "party-backend",
+  "version": "1.0.0",
+  "description": "Backend Party App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craitz/party-backend.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Camilo Raitz da Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craitz/party-backend/issues"
+  },
+  "homepage": "https://github.com/craitz/party-backend#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
