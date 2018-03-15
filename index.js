@@ -5,7 +5,7 @@ const router = express.Router();
 const port = process.env.PORT || 8080;
 
 // url: http://localhost:3000/
-app.get('/', (request, response) => response.send('Hello World'));
+app.get('/', (request, response) => response.send('Hello World Dev'));
 
 // all routes prefixed with /api
 app.use('/api', router);
