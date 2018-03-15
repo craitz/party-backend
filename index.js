@@ -4,8 +4,10 @@ const app = express();
 const router = express.Router();
 const port = process.env.PORT || 8080;
 
-app.get('/', (request, response) =>
-  response.send('Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva')
+app.get(
+  '/',
+  (request, response) => response.redirect('/api')
+  //   response.send('Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva')
 );
 
 // all routes prefixed with /api
