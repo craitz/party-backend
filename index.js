@@ -24,7 +24,7 @@ router.get('/', (request, response) => {
 router.get('/hack', (request, response) => {
   var urlParts = url.parse(request.url, true);
   var parameters = urlParts.query;
-  var myParam = parameters.myParam;
+  var myParam = parameters.param;
 
   response.json({
     message: 'Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
