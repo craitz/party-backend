@@ -13,7 +13,11 @@ app.use('/api', router);
 
 // using router.get() to prefix our path
 router.get('/', (request, response) => {
-  response.json({ message: 'Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva' });
+  response.json({
+    message: 'Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
+    hacking: 'no',
+    param: null
+  });
 });
 
 router.get('/hack', (request, response) => {
@@ -21,9 +25,11 @@ router.get('/hack', (request, response) => {
   var parameters = urlParts.query;
   var myParam = parameters.myParam;
 
-  var myResponse = `Endpoint de hacking: Você passou o parâmetro (${myParam}) !`;
-
-  response.json({ message: myResponse });
+  response.json({
+    message: 'Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
+    hacking: 'yes',
+    param: myParam
+  });
 });
 
 // set the server to listen on port 3000
