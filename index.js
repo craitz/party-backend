@@ -11,7 +11,6 @@ app.get('/', (request, response) =>
 // all routes prefixed with /api
 app.use('/api', router);
 
-// using router.get() to prefix our path
 router.get('/', (request, response) => {
   response.json({
     message: 'Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
