@@ -5,7 +5,7 @@ const router = express.Router();
 const port = process.env.PORT || 8080;
 
 app.get('/', (request, response) =>
-  response.send('Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva')
+  response.send('Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva')
 );
 
 // all routes prefixed with /api
@@ -13,7 +13,7 @@ app.use('/api', router);
 
 router.get('/', (request, response) => {
   response.json({
-    message: 'Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
+    message: 'Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
     hacking: 'no',
     param: null
   });
@@ -25,14 +25,11 @@ router.get('/hack', (request, response) => {
   var myParam = parameters.myParam;
 
   response.json({
-    message: 'Incrível app de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
+    message: 'Incrível api de Roberto Mandolesi Vilas Boas e Camilo Raitz da Silva',
     hacking: 'yes',
     param: myParam
   });
 });
-
-// set the server to listen on port 3000
-app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // this array is used for identification of allowed origins in CORS
 const originWhitelist = [];
@@ -57,3 +54,6 @@ router.use((request, response, next) => {
   // push through to the proper route
   next();
 });
+
+// set the server to listen on port 3000
+app.listen(port, () => console.log(`Listening on port ${port}`));
